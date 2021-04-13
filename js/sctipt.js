@@ -26,3 +26,13 @@ personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = d;
 
 console.log(personalMovieDB);
+
+let num = 100;
+
+
+for(let i = 0; i < 20; i++){
+    num++;
+    console.log(num);
+}
+
+console.log(num);
