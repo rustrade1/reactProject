@@ -1,14 +1,14 @@
 
 'use strict';
-let numberOfFilms;
+// let numberOfFilms;
 
-const personalMovieDB = {
-    count : numberOfFilms,
-    movies : {},
-    actors : [],
-    genres : [],
-    privat : true
-};
+// const personalMovieDB = {
+//     count : numberOfFilms,
+//     movies : {},
+//     actors : [],
+//     genres : [],
+//     privat : true
+// };
 
 
 // function start() {
@@ -63,16 +63,63 @@ const personalMovieDB = {
 
 
 // 3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
-// "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+// "Ваш любимый жанр под номером ${  номер по порядку}". Каждый ответ записывается в массив данных
 // genres
 
 
-function writeYourGenres() {
-    for(let i=1; i < 4; i++) {
-       let film = prompt(`Ваш любимый жанр под номером ${i}`);
-       personalMovieDB.genres[i-1] = film;
-    }
-}
+// function writeYourGenres() {
+//     for(let i=1; i < 4; i++) {
+//        let film = prompt(`Ваш любимый жанр под номером ${i}`);
+//        personalMovieDB.genres[i-1] = film;
+//     }
+// }
 
-writeYourGenres();
-console.log(personalMovieDB);
+// writeYourGenres();
+// console.log(personalMovieDB);
+
+
+function copy (mainObj) {
+    let objCopy = {};
+    for(let key in mainObj){
+        objCopy[key] = mainObj[key];
+    }   
+
+    return objCopy;
+
+};
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+const newNumbers = copy(numbers);
+newNumbers.a = 10;
+// console.log(numbers);
+// console.log(newNumbers);
+
+
+const add = {
+    d: 17,
+    e: 20
+}
+// console.log(Object.assign({}, add));
+
+const oldArray = ['a', "b" , "c"];
+const newArray = oldArray.slice();
+
+newArray[0] = 'd';
+console.log(oldArray);
+console.log(newArray);
+
+
+const video = ['youtube', 'vimeo', 'rutube' ],
+      blogs = ['WP', 'joomla', 'bitrix'],
+      internet = [...video, ...blogs, 'vk'];
+     
+console.log(internet);       
+            
+
